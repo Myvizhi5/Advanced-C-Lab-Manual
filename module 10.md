@@ -1,4 +1,4 @@
-EXP NO:16 C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST.
+<img width="441" height="530" alt="438115739-0952753c-9a38-4505-a6ea-ebe8381882f5" src="https://github.com/user-attachments/assets/57146186-4280-428f-b675-7953248c4599" />EXP NO:16 C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST.
 Aim:
 To write a C program to search a given element in the given linked list.
 
@@ -9,13 +9,47 @@ Algorithm:
 4.	Call the search function and perform other linked list operations as needed.
  
 Program:
+```
+struct Node{
+    char data; 
+    struct Node *next;
+}*head;
 
-//type your code here
+void search(float data)
+{
+    struct Node *ptr;
+    char item=data;
+    int i=0,flag;
+    ptr = head;
+    if(ptr == NULL)
+    {
+    printf("\nEmpty List\n");
+    }
+    else
+    {
+        while (ptr!=NULL)
+        {
+            if(ptr->data == item)
+            {
+                printf("item %c found at location %d ",item,i+1);
+                flag=0;
+            }
+            i++;
+            ptr = ptr -> next;
+        }
+        if(flag!=0)
+        {
+            printf("Item not found\n");
+        }
+    }
+ 
+}
+
+```
 
 Output:
 
-//paste your output here
-
+<img width="781" height="505" alt="438115098-96c86e0c-1021-4b07-a551-ea0fed1d6877" src="https://github.com/user-attachments/assets/f6a9a2bd-3e25-4a82-bfb0-12b7dc68ad7e" />
 
 
 Result:
@@ -33,12 +67,43 @@ Algorithm:
 4.	Call the insert function and perform other linked list operations as needed.
  
 Program:
+```
+struct Node{
+    char data; 
+    struct Node *next;
+}*head;
 
-//type your code here
+void insert(char data)
+{
+    struct Node *n=(struct Node*)malloc(sizeof(struct Node));
+    struct Node *temp;
+    
+    if(head==NULL)
+    {
+        head = n;
+        head->data = data;
+        n->next=NULL;
+        return;
+    }
+    
+    temp=head;
+    
+    while(temp->next!=NULL)
+    {
+        temp=temp->next;
+    }
+    
+    n->data = data;
+    n->next = NULL;
+    temp->next= n;    
+    
+}
+```
 
 Output:
 
-//paste your output here
+<img width="441" height="530" alt="438115739-0952753c-9a38-4505-a6ea-ebe8381882f5" src="https://github.com/user-attachments/assets/7b911d3f-50db-4785-819d-c06aceef5bd6" />
+
 
  
 Result:
@@ -57,12 +122,30 @@ Algorithm:
 4.	Move to the next node by updating the temp pointer to point to the next node (temp = temp->next).
  
 Program:
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    char data;
+}*head;
 
-//type your code here
+void display()
+{
+    struct Node *ptr;
+    ptr = head;
+    while(ptr != NULL)
+    {
+        printf("%c ",ptr->data);
+        ptr=ptr->next;
+    }
+}
+```
 
 Output:
 
-//paste your output here
+<img width="416" height="517" alt="438116177-ab935632-85bf-4614-ab7a-c6a6edf34f70" src="https://github.com/user-attachments/assets/9c6131e7-30b3-4618-83b9-8ac6a702ee68" />
+
 
 
 Result:
@@ -82,12 +165,50 @@ Algorithm:
 5.	Set the new node's prev pointer to the last node and update the last node's next pointer to the new node.
  
 Program:
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    float data;
+}*head;
 
-//type your code here
+void insert(float data)
+{
+   struct Node *ptr,*temp;
+   ptr = (struct Node *) malloc(sizeof(struct Node));
+   if(ptr == NULL)
+   {
+       printf("OVERFLOW\n");
+   }
+   else
+   {
+       ptr->data=data;
+       if(head == NULL)
+       {
+           ptr->next = NULL;
+           ptr->prev = NULL;
+           head = ptr;
+       }
+       else
+       {
+          temp = head;
+          while(temp->next!=NULL)
+          {
+              temp = temp->next;
+          }
+          temp->next = ptr;
+          ptr ->prev=temp;
+          ptr->next = NULL;
+        }
+    }
+}
+```
 
 Output:
+<img width="689" height="522" alt="438116648-41512fb7-ef02-437e-9592-19744719c5c8" src="https://github.com/user-attachments/assets/fc989f43-cf04-4389-9157-f0891ca91a39" />
 
-//paste your output here
+
 
 
 Result:
@@ -124,13 +245,42 @@ o	If the element is not found in any node, print a message indicating the elemen
 
 
 Program:
+```
+struct Node
+{
+    struct Node *prev;
+    struct Node *next;
+    float data;
+}*head;
 
-//type your code here
+void delete()
+{
+    struct Node *ptr;
+    if(head == NULL)
+    {
+        printf("UNDERFLOW\n");
+    }
+    else if(head->next == NULL)
+    {
+        head = NULL;
+        free(head);
+        printf("Node deleted\n");
+    }
+    else
+    {
+        ptr = head;
+        head = head -> next;
+        head -> prev = NULL;
+        free(ptr);
+        printf("Node deleted\n");
+    }
+}
+```
 
 Output:
 
-//paste your output here
 
+<img width="851" height="627" alt="438117292-7f48d456-3edf-4949-8ca8-322bcf661b72" src="https://github.com/user-attachments/assets/6a1cbf5f-7889-4f38-8fa5-754bcdad0beb" />
 
 
 
