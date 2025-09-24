@@ -1,4 +1,4 @@
-<img width="441" height="530" alt="438115739-0952753c-9a38-4505-a6ea-ebe8381882f5" src="https://github.com/user-attachments/assets/57146186-4280-428f-b675-7953248c4599" />EXP NO:16 C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST.
+EXP NO:16 C PROGRAM TO SEARCH A GIVEN ELEMENT IN THE GIVEN LINKED LIST.
 Aim:
 To write a C program to search a given element in the given linked list.
 
